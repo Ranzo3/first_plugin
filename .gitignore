@@ -3,3 +3,5 @@ build
 src/generated
 src/generated/definitions
 src/plugin_runner.pyc
+src/generated/definitions/source_config_definition.py
+*.py
