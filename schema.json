@@ -8,14 +8,24 @@
         "identityFields": ["name"]
     },
     "sourceConfigDefinition": {
-        "type": "object",
-        "required": ["name"],
-        "additionalProperties": false,
-        "properties": {
-            "name": { "type": "string" }
+      "type": "object",
+      "required": ["name", "path"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "prettyName": "Dataset Name",
+          "description": "User-visible name for this dataset"
         },
-        "nameField": "name",
-        "identityFields": ["name"]
+        "path": {
+          "type": "string",
+          "format": "unixpath",
+          "prettyName": "Path",
+          "description": "Full path to data location on the remote environment"
+        }
+      },
+      "nameField": "name",
+      "identityFields": ["path"]
     },
     "virtualSourceDefinition": {
         "type": "object",

@@ -23,7 +23,7 @@ def repository_discovery(source_connection):
     # by the SDK tools from the plugin's root directory.
     #
 
-    return [RepositoryDefinition(name='e0696a23-4b64-483c-808a-35bd2c9571e3')]
+    return [RepositoryDefinition(name='Repository for our First Plugin')]
 
 
 @plugin.discovery.source_config()
