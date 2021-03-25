@@ -14,11 +14,13 @@ class SourceConfigDefinition(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, name=None, validate=True):
+    def __init__(self, path=None, name=None, validate=True):
         """SourceConfigDefinition - a model defined in Swagger. The type of some of these
         attributes can be defined as a List[ERRORUNKNOWN]. This just means they
         are a list of any type.
 
+            :param path: The path of this SourceConfigDefinition.
+            :type path: str
             :param name: The name of this SourceConfigDefinition.
             :type name: str
             :param validate: If the validation should be done during init. This
@@ -26,13 +28,28 @@ class SourceConfigDefinition(Model):
             :type validate: bool
         """
         self.swagger_types = {
+            'path': str,
             'name': str
         }
 
         self.attribute_map = {
+            'path': 'path',
             'name': 'name'
         }
         
+        # Validating the attribute path and then saving it.
+        if validate and path is None:
+            raise GeneratedClassesError(
+                "The required parameter 'path' must not be 'None'.")
+        type_error = GeneratedClassesTypeError.type_error(SourceConfigDefinition,
+                                                          'path',
+                                                          path,
+                                                          str,
+                                                          True)
+        if validate and type_error:
+            raise type_error
+        self._path = path
+
         # Validating the attribute name and then saving it.
         if validate and name is None:
             raise GeneratedClassesError(
@@ -57,9 +74,43 @@ class SourceConfigDefinition(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
+    def path(self):
+        """Gets the path of this SourceConfigDefinition.
+
+        Full path to data location on the remote environment
+
+        :return: The path of this SourceConfigDefinition.
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this SourceConfigDefinition.
+
+        Full path to data location on the remote environment
+
+        :param path: The path of this SourceConfigDefinition.
+        :type path: str
+        """
+        # Validating the attribute path and then saving it.
+        if path is None:
+            raise GeneratedClassesError(
+                "The required parameter 'path' must not be 'None'.")
+        type_error = GeneratedClassesTypeError.type_error(SourceConfigDefinition,
+                                                          'path',
+                                                          path,
+                                                          str,
+                                                          True)
+        if type_error:
+            raise type_error
+        self._path = path
+
+    @property
     def name(self):
         """Gets the name of this SourceConfigDefinition.
 
+        User-visible name for this dataset
 
         :return: The name of this SourceConfigDefinition.
         :rtype: str
@@ -70,6 +121,7 @@ class SourceConfigDefinition(Model):
     def name(self, name):
         """Sets the name of this SourceConfigDefinition.
 
+        User-visible name for this dataset
 
         :param name: The name of this SourceConfigDefinition.
         :type name: str

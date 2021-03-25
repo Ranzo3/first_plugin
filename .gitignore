@@ -1,7 +1,5 @@
-.dvp*
-build
-src/generated
-src/generated/definitions
+.dvp-gen-output/
+.gitignore.bak
+build/
+src/generated/
 src/plugin_runner.pyc
-src/generated/definitions/source_config_definition.py
-*.py
