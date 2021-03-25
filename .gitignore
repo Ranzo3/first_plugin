@@ -1,4 +1,5 @@
 .dvp*
 build
 src/generated
+src/generated/definitions
 src/plugin_runner.pyc
