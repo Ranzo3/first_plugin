@@ -1,7 +1,5 @@
 .dvp-gen-output/
 .gitignore.bak
 build/
-#src/generated/definitions/*.py
 src/generated
-#src/generated/definitions
 src/plugin_runner.pyc
